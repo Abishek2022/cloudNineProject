@@ -2,6 +2,29 @@
 <html>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+              
+        /*right to left */
+        .top-container {
+            overflow: hidden;
+            position: relative;
+            white-space: nowrap;
+            background-color: transparent;
+            padding: 15px 0;
+        }
+        .top-content {
+            display: flex;
+            gap: 2rem;
+            min-width: 100%;
+            animation: scroll-left 20s linear infinite;
+        }
+        @keyframes scroll-left {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
         /* shin text order now */
         @keyframes shine {
     0% { background-position: 0% 50%; }
@@ -10,33 +33,9 @@
   }
 
   .animate-text {
-    background-image: linear-gradient(90deg, #ff0000, #ff7300, #ffeb00, #47ff00, #00ffb7, #0047ff, #8b00ff);
+    background-image: linear-gradient(90deg, #5d00ff, #250b2f, #ff00ff, #f200ff, #ff00ae, #ff0080, #ff0000);
     background-size: 400% 400%;
     animation: shine 3s infinite linear;
-  }
-        /*smookey effect*/
-          @keyframes smokeEffect {
-    0% {
-      transform: translateY(0) scale(2);
-      opacity: 20;
-    }
-    50% {
-      transform: translateY(-40px) scale(2);
-      opacity: 20;
-    }
-    80% {
-      transform: translateY(-40px) scale(2);
-      opacity: 20;
-    }
-    100% {
-      transform: translateY(-80px) scale(1.4);
-      opacity: 0;
-    }
-  }
-
-  .smoke {
-    animation: smokeEffect 4s infinite ease-in-out;
-    filter: blur(20px);
   }
 
         /*nav bar*/
@@ -120,98 +119,164 @@
 
     </style>
     <head>
-        <body class="grid    "> 
-           <div id="navbar" class=" grid grid-row   fixed top-0 left-0 w-full transition-all duration-300 z-50 text-[20px] bg-transparent w-screen  ">
-                <nav class="flex flex-cols-2  w-full    gap-10 text-justify    h-[100px] px-14 py-5 text-black "> <!--navigation bar-->
-                    <div class="flex  gap-16 ">
-                    <div class="flex text-[18px]  items-center text-justify ">    
-                        <div class="uppercase font-bold text-3xl font-['abril']">cloud 9 cafe</div>
+        <body class="grid m-0 p-0 "> 
+            <div id="navbar" class=" grid grid-row   fixed top-0 left-0 w-full transition-all duration-300 z-50 text-[20px] bg-transparent w-screen  ">
+                <nav class="flex flex-cols-2  w-full text-justify    h-[100px] px-14 py-5 text-black "> <!--navigation bar-->
+                    <div class="flex gap-9   ">
+                        <div class="flex text-[18px] w-full items-center text-justify  ">    
+                            <div class="uppercase font-bold text-3xl font-['abril']">cloud 9 cafe</div> 
+                        </div>
+                        <div class=" flex gap-3   w-full  text-[18px] ml-6  text-justify justify-center items-center font-['Dubai'] ">    
+                            <Button id="#home" ></Button><a href="#about" class="scroll-link  after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Home</a></Button>
+                            <Button ></Button><a href="#menu" class="scroll-link scroll-link  after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Menu</a></Button>
+                            <Button ></Button><a href="#expriance" class="scroll-link scroll-link  after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Gallery</a></Button>
+                            <Button ></Button><a href="#project" class="scroll-link scroll-link  after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Events</a></Button>
+                            <Button ></Button><a href="#skills" class="scroll-link scroll-link  after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap">About Us</a></Button>
+                            <Button ></Button><a href="#blogs" class="scroll-link scroll-link  after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Reservation</a></Button>
+                            <Button ></Button><a href="#test" class="scroll-link scroll-link  after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Testimonials</a></Button>
                         
-                        
+                        </div>
                     </div>
-                    <div class="flex gap-4  text-[18px] ml-6  justify-around items-center font-['Dubai'] ">    
-                        <Button id="#home" ></Button><a href="#about" class="scroll-link  after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Home</a></Button>
-                        <Button ></Button><a href="#menu" class="scroll-link scroll-link  after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Menu</a></Button>
-                        <Button ></Button><a href="#expriance" class="scroll-link scroll-link  after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Gallary</a></Button>
-                        <Button ></Button><a href="#project" class="scroll-link scroll-link  after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Events</a></Button>
-                        <Button ></Button><a href="#skills" class="scroll-link scroll-link  after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">About Us</a></Button>
-                        <Button ></Button><a href="#blogs" class="scroll-link scroll-link  after:block after:h-0.5 after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full">Reservation</a></Button>
-                       
-                    </div>
-                </div>
-                
-                    <div class="flex gap-5 items-center  text-[18px] ml-44  ">    
-                       
-                       
+                    <div class="flex gap-5 items-center  text-[18px] ml-44  ">  
                         <div class=" text-transparent font-bold text-2xl bg-clip-text animate-text uppercase "><a class="cursor-pointer">Order now</a></div>
-                        <div class="p-2 px-6  bg-black text-white font-semibold rounded-lg hover:bg-blue-700 transition cursor-pointer">Log In</div>
+                        <div class="py-2 px-7  bg-transparent text-balck border-2 border-black font-semibold rounded-md hover:bg-blue-700 hover:border-blue-700 hover:text-white transition cursor-pointer">Log In</div>
+                    </div>
+                </nav>  
+            </div > 
+            <!--home page-->
+            <div id="home" class="h-screen relative">
+                <div id="about" class="flex h-screen w-cover  bg-white"> 
+                    <div id="" class="animate-right h-screen w-screen  ">
+                        <img class="w-full h-screen object-cover" src="homePageImage/back02.jpg">
+                    </div>
+                </div>
+                <div class=" grid text-3xl absolute inset-0 grid grid-cols-2 items-center w-11/12 mx-auto rounded-lg color-red-500">
+                    <div class="grid gap-10">
+                        <div class="grid gap-9">
+                            <div class="grid gap-2">
+                            <div class="flex gap-4">
+                                <div class=" text-[19px]">Welcome To </div>
+                                <di class="font-bold uppercase text-[20px] text-blue-500 glowing-text">Cloud 9 Cafe</di>
+                            </div>
+                     
+                        <div class="flex h-fit text-left text-5xl font-bold uppercase">Discover new tastes and comfortable moments</div>
+                    </div>
+                        <div class=" flex  text-[18px] text-justify">Step into Cloud 9 Cafe, where every bite is a delight and every moment feels special. Indulge in mouthwatering dishes, aromatic coffee, and premium hookah in a cozy, welcoming ambiance designed for comfort and relaxation.</div>
+                        </div>
+                        <button class=" w-fit p-3 cursor-pointer bg-blue-500 rounded-lg hover:bg-blue-700 transition cursor-pointer text-[20px] text-white"><a href="#">Satisfy Your Cravings in Just a Click!</a></button>
+                        <div class="bg-transparent text-black rounded-lg flex items-center space-x-7 w-fit ">
+                            <!-- Avatars Section -->
+                            <div class="flex -space-x-4 ">
+                                <img class="w-12 h-12 object-cover rounded-full border-2 border-gray-300" src="homePageImage/review photo/b1.jpg" alt="User">
+                                <img class="w-12 h-12 object-cover rounded-full border-2 border-gray-300" src="homePageImage/review photo/b1.jpg" alt="User">
+                                <img class="w-12 h-12  object-cover rounded-full border-2 border-gray-300" src="homePageImage/review photo/b1.jpg" alt="User">
+                                <img class="w-12 h-12  object-cover rounded-full border-2 border-gray-300" src="homePageImage/review photo/b1.jpg" alt="User">
+                            </div>
+                    
+                            <!-- Text Section -->
+                            <div>
+                                <div class="flex  items-center gap-2"><p id="counter" class="text-xl font-semibold">0 </p><p class="text-2xl item-center">+</p></div>
+                                <p class="text-sm text-black">Happy Costumers Nationwide</p>
+                            </div>
+                    
+                            <!-- Divider -->
+                            <div class="w-px bg-gray-500 h-12"></div>
+                    
+                            <!-- Ratings Section -->
+                            <div class="text-black">
+                                <p class="text-xl font-semibold flex items-center">
+                                    4.7/5 <span class="ml-2 ">⭐</span>
+                                </p>
+                                <p class="text-sm text-balack">600+ Reviews • Excellent</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div><img src="" alt=""></div>
+                </div>
+                <div class="flex   absolute inset-0 items-end ">
+                    <div class="flex w-10/12 mx-auto items-center w-fit p-4 text-white bg-black whitespace-nowrap text-2xl">Special Foods</div>
+                    <div class=" flex w-full py-6 top-container">
+                        <div class="flex top-content justify-center">
+                            <img  src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Forbes_logo.svg" class="h-8" alt="Forbes">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Entrepreneur_28magazine29_logo.png" class="h-8" alt="Entrepreneur">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/The_Economic_Times_logo.svg/2560px-The_Economic_Times_logo.svg.png" class="h-8" alt="Economic Times">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Moneycontrol_Logo.svg/2560px-Moneycontrol_Logo.svg.png" class="h-8" alt="Moneycontrol">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/YourStory_Logo.png" class="h-8" alt="YourStory">
+                            <img  src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Forbes_logo.svg" class="h-8" alt="Forbes">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Entrepreneur_28magazine29_logo.png" class="h-8" alt="Entrepreneur">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/The_Economic_Times_logo.svg/2560px-The_Economic_Times_logo.svg.png" class="h-8" alt="Economic Times">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Moneycontrol_Logo.svg/2560px-Moneycontrol_Logo.svg.png" class="h-8" alt="Moneycontrol">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+ <!--menu list -->
+            <div id="menu" class=" flex relative overflow-x-auto bg-gray-100 shadow-2xl  h-screen  py-3 font-[Yu Gothic Medium] mt-0 "> 
+              
+                <div class="flex h-fit mt-14  relative overflow-x-auto bg-gray-100 shadow-2xl    font-[Yu Gothic Medium] ">
+                    <div class="flex flex-col w-fit">
+                        <div class="flex text-6xl uppercase p-5 font-semibold font-poppin mt-2">Food Items </div>
+                        <div class="p-[2px] bg-gradient-to-r from-blue-900 via-blue-700 to-pink-500 rounded-lg w-5/12 flex ml-5  "></div>    
+                    </div>
+                    <!-- Scrollable Container -->
+                    <div id="scrollContainer" class="flex flex-col space-y-6 overflow-x-auto p-4 w-full mx-auto mt-2  scrollbar-hide">
+                        <!-- Row 1 -->
+                        <div id="manuItemsROne" class="flex space-x-6">
+                        </div>
+                        <!-- Row 2 -->
+                        <div id="manuItemsRTwo" class="flex space-x-6">
+                        </div>
+                    </div>
+                </div>
+          
+            </div> 
+
+<!--hukka section-->
+
+<div  class="flex flex-col gap-10 w-full h-screen mt-0  bg-white mt-10 " > <!--university page-->
+    <div class="flex w-full h-fit   items-center gap-2 ">
+        <div class="  text-5xl  uppercase w-11/12  mx-auto border-2  font-semibold">Hookah</div>
+    
+    </div>
+    <div class="grid grid-cols-2">
+        <div class="flex justify-center">
+            <div  class="grid grid-row-4 h-fit  item-center border-3 gap-0 border-blue-500 w-11/12 mx-auto h-fit "> <!-- univesity image-->
+                    <div id="one" class="flex    items-center border-indigo-200 rounded-md   opacity-0 transform translate-y-20 transition-all duration-1000 ease-in-out ">
+                        <div class="  w-full    "><img class="h-[150px] object-cover w-full"  src="homePageImage/food05.png"> </div>
                         
                     </div>
-                </nav> 
-               
-           </div > 
-
-         
-<div id="home" class=" relative">
-            <div id="about" class="flex h-screen w-cover  bg-white"> <!--first page-->
-                
-                <div id="" class="animate-right h-screen w-screen  ">
-                    <img class="w-full h-screen object-cover   " src="homePageImage/back02.jpg">
+                    <div  id="two" class="flex   items-centerborder-indigo-200 rounded-md  opacity-0 transform translate-y-20 transition-all duration-1000 ease-in-out  ">
+                        <div class="  w-full ml-3  "><img class="h-[150px] object-cover w-full" src="homePageImage/food05.png"> </div>
+                        
+                    </div>
+                    <div id="three" class="flex   items-center border-indigo-200 rounded-md   opacity-0 transform translate-y-20 transition-all duration-1000 ease-in-out  ">
+                        <div class="  w-full ml-3  "><img class="h-[150px] object-cover w-full" src="homePageImage/food05.png"> </div>
+                        
+                    </div>
+                    <div id="four" class="flex  items-center border-indigo-200 rounded-md  opacity-0 transform translate-y-20 transition-all duration-1000 ease-in-out ">
+                        <div class="  w-full ml-3  "><img class="h-[150px] object-cover w-full"src="homePageImage/food05.png"> </div>
+                        
+                    </div>      
+                    
+                    
+                    
                 </div>
-
-
-            </div>
-            <div class="text-3xl absolute inset-0 grid grid-cols-2 items-center w-11/12 mx-auto   rounded-lg color-red-500">
-
-            <div>text</div>
-            <div class="grid   ">
-               
-                <img class=" " src="homePageImage/">
-                
-            </div>
-
-            </div>
-</div>
-
-
-              <!--cousers list -->
-
- <div id="menu" class=" flex  relative overflow-x-auto bg-gray-100 shadow-2xl  h-screen  py-3 font-[Yu Gothic Medium] "> 
-    <div class="flex h-fit  relative overflow-x-auto bg-gray-100 shadow-2xl   py-3 font-[Yu Gothic Medium] mt-16">
-        <div class="flex flex-col w-/12">
-            <div class="flex text-6xl uppercase p-5 font-semibold font-poppin ">Food Items </div>
-            <div class="p-[2px] bg-gradient-to-r from-blue-900 via-blue-700 to-pink-500 rounded-lg w-8/12 flex ml-5  "></div>    
         </div>
-
-    
-  <!-- Scrollable Container -->
-        <div id="scrollContainer" class="flex flex-col space-y-6 overflow-x-auto p-4 w-full mx-auto mt-2  scrollbar-hide">
-        
-    <!-- Row 1 -->
-    <div id="manuItemsROne" class="flex space-x-6">
-     
+        <div>Text</div>
     </div>
-  
-    <!-- Row 2 -->
-    <div id="manuItemsRTwo" class="flex space-x-6">
-     
-
-    
-    </div>
-  </div>
-  
+         
+</div>
+<!--testimonials section-->
+<div id="test" class="  flex flex-col gap-10 w-11/12 mx-auto h-screen ">
+    <div class="text-5xl uppercase font-semibold">Testimonial</div>
+<div id="testSection" class="grid grid-cols-3 gap-10 text-white ">
+   
+</div>
 </div>
 
-</div> 
 
-
-
-
-
-
-
-
-            <div  class="grid grid-row-3 w-full gap-10  bg-white mt-10  " > <!--university page-->
+            <div  class="grid grid-row-3 w-full gap-10  bg-white mt-10 " > <!--university page-->
                 <div class="flex w-full gap-0  items-center gap-2 ">
                     <div class="  text-5xl ml-14 uppercase w-6/12  mx-auto  font-semibold">List of University</div>
                     <div class=" p-[2px] bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 rounded-lg w-full "></div>
