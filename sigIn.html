@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="grid items-center  w-full h-sceentext-black auto-col-maxa">
+    <div class="grid border-4 bg-blue-100 border-blue-100  shadow-2xl backdrop-blur-lg  w-7/12 mx-auto h-fit gap-5 rounded-md p-8 ">
+        <div class="flex w-full  ">
+            <div class="text-[26px] w-full font-semibold text-blue-500 ">Log in to your account</div>
+            <div class="flex w-full justify-end  items-center text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 16 16"><path fill="currentColor" d="M15.854 12.854L11 8l4.854-4.854a.503.503 0 0 0 0-.707L13.561.146a.5.5 0 0 0-.707 0L8 5L3.146.146a.5.5 0 0 0-.707 0L.146 2.439a.5.5 0 0 0 0 .707L5 8L.146 12.854a.5.5 0 0 0 0 .707l2.293 2.293a.5.5 0 0 0 .707 0L8 11l4.854 4.854a.5.5 0 0 0 .707 0l2.293-2.293a.5.5 0 0 0 0-.707"/></svg></div>
+        </div>
+        <div class="flex gap-2 justify-between">
+            <div  class="grid gap-10 h-fit w-full">
+                <div class="flex  w-full text-[23px] rounded-lg  mx-auto border-2 ">
+                    <div class="flex justify-center w-full  hover:bg-blue-500 hover:text-white hover:rounded-l ">Email</div>
+                    <div class="border-l-2 border-black w-full flex justify-center hover:bg-blue-500 hover:text-white hover:rounded-r ">Phone</div>
+                </div>
+                <div class="grid gap-5">
+                <div class="grid gap-5 text-[20px]  ">
+                    <div class="border-2 flex rounded-lg  "><input class="w-full p-2" type="text" id="email" placeholder="Enter your Email"/></div>
+                    <div class="border-2 flex rounded-lg  "><input class="w-full p-2"  type="text" id="password" placeholder="Password"/></div>
+                </div>
+                <div class="flex  ">
+                    <div class="w-full text-blue-800 hover:text-blue-700 cursor-pointer">Sign Up</div>
+                    <div class="flex w-full  justify-end text-blue-700 hover:text-blue-900 cursor-pointer">Forgot Password ?</div>
+                </div>
+                <button class="border-2 border-blue-500 rounded-lg text-[25px] bg-blue-400 hover:bg-blue-500 hover:text-white font-semibold">Log In</button>
+                <div class="flex w-full gap-2 items-center">
+                    <div class="border-2 h-1 flex w-11/12 justify-center"></div>
+                    <div class="flex w-full justify-center">or continue with </div>
+                    <div class="border-2 flex h-1 w-11/12 "></div>
+                    
+                </div>
+                <div class="flex items-center justify-center "><svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 256 262"><path fill="#4285f4" d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622l38.755 30.023l2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"/><path fill="#34a853" d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055c-34.523 0-63.824-22.773-74.269-54.25l-1.531.13l-40.298 31.187l-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"/><path fill="#fbbc05" d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82c0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602z"/><path fill="#eb4335" d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0C79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"/></svg></div>
+                <div class="flex w-full">By logging in or signing up, you agree to the Online booking rules and Privacy policy.</div>
+
+                </div>
+            </div>
+            <div class=" flex items-start rounded-lg w-full "><img class=" h-[500px] w-500px]" src="RegistrationImage/login-security-illustration-download-in-svg-png-gif-file-formats--account-secure-user-pack-files-folders-illustrations-7271013.webp"></div>
+        </div>
+        <div id="error" class="text-red text-2xl"></div>
+    </div>
+    <script>
+        function logIn(){
+            const user=document.getElementById("username").value;
+            const pass=documnet.getElementById("password").value;
+            const error= documnet.getElementById("error");
+            const uname="admin";
+            const upass="123";
+            if(user=="" || upass==""){
+                error.innerText="your message is invaled"
+                return false;
+                
+            } if(user != uname || pass !=upass){
+               error.innerText="invalid user name and password"
+               return false;
+            }
+            alert("login now");
+            return true;
+        } 
+    </script>
+</body>
+</html>
