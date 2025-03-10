@@ -5,28 +5,30 @@
     <title>Document</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
-<body class="grid items-center  w-full h-sceentext-black auto-col-maxa">
-    <div class="grid border-4 bg-blue-100 border-blue-100  shadow-2xl backdrop-blur-lg  w-7/12 mx-auto h-fit gap-5 rounded-md p-8 ">
+<body class="grid items-center  w-full text-black auto-col-maxa">
+    <div class="grid  bg-blue-100   shadow-2xl backdrop-blur-lg  w-7/12 mx-auto h-fit gap-5 rounded-md p-8 ">
         <div class="flex w-full  ">
             <div class="text-[26px] w-full font-semibold text-blue-500 ">Log in to your account</div>
             <div class="flex w-full justify-end  items-center text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 16 16"><path fill="currentColor" d="M15.854 12.854L11 8l4.854-4.854a.503.503 0 0 0 0-.707L13.561.146a.5.5 0 0 0-.707 0L8 5L3.146.146a.5.5 0 0 0-.707 0L.146 2.439a.5.5 0 0 0 0 .707L5 8L.146 12.854a.5.5 0 0 0 0 .707l2.293 2.293a.5.5 0 0 0 .707 0L8 11l4.854 4.854a.5.5 0 0 0 .707 0l2.293-2.293a.5.5 0 0 0 0-.707"/></svg></div>
         </div>
         <div class="flex gap-2 justify-between">
-            <div  class="grid gap-10 h-fit w-full">
-                <div class="flex  w-full text-[23px] rounded-lg  mx-auto border-2 ">
-                    <div class="flex justify-center w-full  hover:bg-blue-500 hover:text-white hover:rounded-l ">Email</div>
-                    <div class="border-l-2 border-black w-full flex justify-center hover:bg-blue-500 hover:text-white hover:rounded-r ">Phone</div>
+            <div  class="grid gap-5 h-fit w-full">
+                <div class="flex  w-full text-[23px] rounded-lg  mx-auto border border-blue-800 ">
+                    <div class="flex justify-center w-full  hover:bg-blue-500 hover:text-white hover:rounded-l hover:shadow-2x ">Email</div>
+                    <div class="border-l border-blue-700 w-full flex justify-center hover:bg-blue-500 hover:text-white hover:rounded-r ">Phone</div>
                 </div>
                 <div class="grid gap-5">
                 <div class="grid gap-5 text-[20px]  ">
-                    <div class="border-2 flex rounded-lg  "><input class="w-full p-2" type="text" id="email" placeholder="Enter your Email"/></div>
-                    <div class="border-2 flex rounded-lg  "><input class="w-full p-2"  type="text" id="password" placeholder="Password"/></div>
+                    <div class="border flex rounded-lg hover:border-blue-500 hover:shadow-lg  "><input class="w-full p-2" type="text" id="username" placeholder="Enter your Email"/></div>
+                    <div class="border flex rounded-lg hover:border-blue-500 "><input class="w-full p-2"  type="text" id="passwords" placeholder="Password"/></div>
+
+
                 </div>
-                <div class="flex  ">
-                    <div class="w-full text-blue-800 hover:text-blue-700 cursor-pointer">Sign Up</div>
+                <div class="flex">
+                    <div class="w-full text-blue-800 hover:text-blue-900 cursor-pointer">Sign Up</div>
                     <div class="flex w-full  justify-end text-blue-700 hover:text-blue-900 cursor-pointer">Forgot Password ?</div>
                 </div>
-                <button class="border-2 border-blue-500 rounded-lg text-[25px] bg-blue-400 hover:bg-blue-500 hover:text-white font-semibold">Log In</button>
+                <button class="border-2 border-blue-500 rounded-lg text-[25px] bg-blue-400 hover:bg-blue-500 hover:text-white font-semibold hover:shadow-lg cursor-pointer " onclick=logIn()>Log In</button>
                 <div class="flex w-full gap-2 items-center">
                     <div class="border-2 h-1 flex w-11/12 justify-center"></div>
                     <div class="flex w-full justify-center">or continue with </div>
@@ -38,28 +40,45 @@
 
                 </div>
             </div>
-            <div class=" flex items-start rounded-lg w-full "><img class=" h-[500px] w-500px]" src="RegistrationImage/login-security-illustration-download-in-svg-png-gif-file-formats--account-secure-user-pack-files-folders-illustrations-7271013.webp"></div>
+            <div class="grid w-full border items-center shadow-2x justify-center gap-5">
+            <div class=" flex   w-full items-cemter "><img class=" h-[250px] w-250px] " src="RegistrationImage/login-security-illustration-download-in-svg-png-gif-file-formats--account-secure-user-pack-files-folders-illustrations-7271013.webp"></div>
+            <divc class=" grid grid-rowsa-2 w-full h-fit items-cemter">
+                <div class="text-2xl text-blue-600">The benefits of your account</div>
+                <div>Take control of yours bookings — easily modify or cancel them at your convenience.
+                    Book accommodation in no time by having your contact details filled in automatically.
+                    Keep track of your booking history and easily view information about your previous visits.</div>
+            </di>
         </div>
-        <div id="error" class="text-red text-2xl"></div>
+        
+
+    </div>
+    <div id="error"></div>
+        
     </div>
     <script>
-        function logIn(){
-            const user=document.getElementById("username").value;
-            const pass=documnet.getElementById("password").value;
-            const error= documnet.getElementById("error");
-            const uname="admin";
-            const upass="123";
-            if(user=="" || upass==""){
-                error.innerText="your message is invaled"
-                return false;
-                
-            } if(user != uname || pass !=upass){
-               error.innerText="invalid user name and password"
-               return false;
-            }
-            alert("login now");
-            return true;
-        } 
+function logIn() {
+    const user = document.getElementById("username").value;
+    const pa = document.getElementById("passwords").value;
+    const err = document.getElementById("error");
+    const uname = "admin";
+    const upass = "123";
+
+    // Check if username or password is empty
+    if (user === "" || pa === "") {
+        err.innerText = "Username and password cannot be empty.";
+        return false;
+    }
+
+    // Check if username and password match
+    if (user !== uname || pa !== upass) {
+        err.innerText = "Invalid username or password.";
+        return false;
+    }
+
+    // If everything is correct, show success message
+    alert("Login successful!");
+    return true;
+}
     </script>
 </body>
 </html>
