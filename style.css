@@ -125,6 +125,13 @@
 .fo-text-hover{
   @apply  hover:text-[#1791c8]
 }
+
+.hooka-photo-animation{
+    @apply items-centerborder-indigo-200 rounded-md  opacity-0 transform translate-y-20 transition-all duration-1000 ease-in-out;
+}
 .primery-font{
-    @apply 
+    @apply font-[Yu Gothic Medium] border-gray-300;
+}
+.pri-text-color{
+    @apply text-white;
 }
